@@ -1,0 +1,156 @@
+---
+import Base from '../layouts/Base.astro';
+
+const event = {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: 'Schefer-Fäscht 2027',
+  startDate: '2027-05-20T16:00:00+02:00',
+  endDate: '2027-05-23T18:00:00+02:00',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  eventStatus: 'https://schema.org/EventScheduled',
+  location: { '@type': 'Place', name: 'Areal Reto Schefer Gartenbau AG', address: { '@type': 'PostalAddress', addressLocality: 'Uttwil', addressCountry: 'CH' } },
+  organizer: { '@type': 'Organization', name: 'Reto Schefer Gartenbau AG' },
+  url: 'https://www.schefer-fest.ch',
+};
+---
+
+<Base title="Home" structuredData={event}>
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="eyebrow">20. – 23. Mai 2027 · Uttwil</p>
+      <h1>Vier Tage<br />Schefer-Fäscht</h1>
+      <p class="lead">Die Familie Schefer, die Reto Schefer Gartenbau AG und das Restaurant Amber39 feiern ihre Jubiläen – mit Livemusik, Streetfood, Schlager, Mustangs und Sportlertalk. Die ganze Region ist eingeladen.</p>
+      <div class="actions">
+        <a href="#programm" class="btn btn-accent">Zum Programm</a>
+        <a href="#kontakt" class="btn btn-outline">Kontakt</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="facts">
+      <div class="fact"><span class="fact-label">Datum</span><span class="fact-value">20.–23.05.2027</span></div>
+      <div class="fact"><span class="fact-label">Ort</span><span class="fact-value">Areal Reto Schefer Gartenbau AG, Uttwil</span></div>
+      <div class="fact"><span class="fact-label">Erwartete Gäste</span><span class="fact-value">rund 2'600</span></div>
+      <div class="fact"><span class="fact-label">Gastronomie</span><span class="fact-value">Bars &amp; Foodstände</span></div>
+    </div>
+  </section>
+
+  <section id="programm" class="container section">
+    <h2>Programm</h2>
+    <div class="days">
+      <article class="day">
+        <div class="day-head"><span class="day-name">Donnerstag</span><span class="day-date">20. Mai</span></div>
+        <div class="item"><strong>Büezerobet</strong><span>Fassanstich und Livemusik · ab 16.00 Uhr</span></div>
+      </article>
+      <article class="day">
+        <div class="day-head"><span class="day-name">Freitag</span><span class="day-date">21. Mai</span></div>
+        <div class="item"><strong>Streetfood &amp; Weinparty</strong><span>ab 16.00 Uhr</span></div>
+      </article>
+      <article class="day">
+        <div class="day-head"><span class="day-name">Samstag</span><span class="day-date">22. Mai</span></div>
+        <div class="item"><strong>Mustangtreffen</strong><span>10.00 – 16.00 Uhr</span></div>
+        <div class="item"><strong>Kinderparty</strong><span>11.00 – 16.00 Uhr</span></div>
+        <div class="item"><strong>Schlagerfest</strong><span>ab 18.00 Uhr</span></div>
+      </article>
+      <article class="day">
+        <div class="day-head"><span class="day-name">Sonntag</span><span class="day-date">23. Mai</span></div>
+        <div class="item"><strong>Frühschoppen</strong><span>ab 10.00 Uhr</span></div>
+        <div class="item"><strong>Mustangtreffen</strong><span>10.00 – 16.00 Uhr</span></div>
+        <div class="item"><strong>Sportlertalk</strong><span>ab 13.30 Uhr</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="sponsoring" class="container section">
+    <div class="sponsor">
+      <div class="sponsor-text">
+        <h2>Sponsor werden</h2>
+        <p>Zeigen Sie Präsenz vor rund 2'600 Gästen – auf dem Areal, online und auf Plakaten und Flyern. Pakete in Gold, Silber und Bronze ab CHF 2'500, inklusive Verpflegungsgutscheinen.</p>
+      </div>
+      <a href="#kontakt" class="btn btn-accent" data-anliegen="Sponsoring">Sponsorendossier anfragen</a>
+    </div>
+  </section>
+
+  <section id="kontakt" class="container section contact">
+    <div class="contact-info">
+      <h2>Kontakt</h2>
+      <div class="person">
+        <span class="fact-label">Patronat</span>
+        <strong>Reto Schefer</strong>
+        <span>Reto Schefer Gartenbau AG, Uttwil</span>
+        <a href="tel:+41714611860">071 461 18 60</a>
+        <a href="mailto:traumgarten@schefer-gartenbau.ch">traumgarten@schefer-gartenbau.ch</a>
+      </div>
+      <div class="person">
+        <span class="fact-label">Organisation</span>
+        <strong>Ralf Huber</strong>
+        <span>rhc gmbh, Appenzell</span>
+        <a href="tel:+41715404010">071 540 40 10</a>
+        <a href="mailto:ralf@rhc.ch">ralf@rhc.ch</a>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <h3>Schreiben Sie uns</h3>
+      <form id="anfrage" novalidate>
+        <div class="hp" aria-hidden="true"><label>Nicht ausfüllen<input type="text" name="_honey" tabindex="-1" autocomplete="off" /></label></div>
+        <div class="grid2">
+          <label>Name *<input type="text" name="name" required autocomplete="name" /></label>
+          <label>Firma / Verein<input type="text" name="firma" autocomplete="organization" /></label>
+          <label>E-Mail *<input type="email" name="email" required autocomplete="email" /></label>
+          <label>Telefon<input type="tel" name="telefon" autocomplete="tel" /></label>
+        </div>
+        <label>Anliegen
+          <select name="anliegen" id="anliegen">
+            <option>Allgemeine Anfrage</option>
+            <option>Sponsoring</option>
+            <option>Mustangtreffen</option>
+            <option>Gastronomie / Stand</option>
+          </select>
+        </label>
+        <label>Nachricht *<textarea name="nachricht" rows="5" required></textarea></label>
+        <p class="form-error" id="form-error" role="alert" hidden></p>
+        <p class="form-note">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Angaben gemäss <a href="/datenschutz">Datenschutzerklärung</a> zu.</p>
+        <button type="submit" class="btn btn-primary" style="align-self: flex-start">Nachricht senden</button>
+      </form>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const form = document.getElementById('anfrage') as HTMLFormElement;
+  const errorEl = document.getElementById('form-error') as HTMLParagraphElement;
+  const select = document.getElementById('anliegen') as HTMLSelectElement;
+
+  document.querySelectorAll<HTMLAnchorElement>('[data-anliegen]').forEach((a) =>
+    a.addEventListener('click', () => { select.value = a.dataset.anliegen || select.value; }),
+  );
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errorEl.hidden = true;
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    const button = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    button.disabled = true;
+    const data = Object.fromEntries(new FormData(form).entries());
+    try {
+      const res = await fetch('/api/anfrage', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(out.error || 'Senden fehlgeschlagen.');
+      window.location.href = '/anfrage-erhalten';
+    } catch (err) {
+      errorEl.textContent = (err as Error).message || 'Etwas ist schiefgelaufen. Bitte versuchen Sie es nochmals oder rufen Sie uns an: 071 540 40 10.';
+      errorEl.hidden = false;
+      button.disabled = false;
+    }
+  });
+</script>

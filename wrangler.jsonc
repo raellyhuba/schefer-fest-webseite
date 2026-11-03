@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "schefer-fest-webseite",
+  "compatibility_date": "2026-09-01",
+  "observability": { "enabled": true },
+  "main": "dist/_worker.js/index.js",
+  "compatibility_flags": ["global_fetch_strictly_public", "nodejs_compat"],
+  "assets": { "binding": "ASSETS", "directory": "dist" },
+  "secrets_store_secrets": [
+    {
+      "binding": "RESENDKEY",
+      "store_id": "d4885df16ef84eeab3e69e770f44b708",
+      "secret_name": "RESENDKEY"
+    }
+  ]
+}
